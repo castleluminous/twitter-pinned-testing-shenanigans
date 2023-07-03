@@ -73,6 +73,8 @@ where
                 .method(Method::POST)
                 .body(Default::default())?;
 
+            println!("{:?}", req.clone());
+
             let resp = service
                 .ready()
                 .await
