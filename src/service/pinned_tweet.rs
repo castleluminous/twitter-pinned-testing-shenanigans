@@ -69,11 +69,11 @@ where
 
         Box::pin(async move {
             let req = Request::builder()
-                .uri(graphql_url(user_id)?)
+                .uri(graphql_url(user_id.clone())?)
                 .method(Method::POST)
                 .body(Default::default())?;
 
-            println!("{:?}", req);
+            println!("{:?}", graphql_url(user_id));
 
             let resp = service
                 .ready()
